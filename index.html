@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Annalisa Caria, AI Systems Architect. Engineering case studies in clinical evidence integration and multi-agent workflows.">
+<title>Annalisa Caria — AI Systems Architect</title>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip" href="#work">Skip to work</a>
+<header class="wrap nav"><a class="brand" href="#top" aria-label="Annalisa Caria, home"><span class="ac-mark" aria-hidden="true">A</span> <span class="brand-name">Annalisa Caria</span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="https://github.com/alcadoni">GitHub</a><a href="#contact">Contact</a></nav></header>
+<main id="top" class="wrap">
+<section class="hero" aria-labelledby="name">
+<p class="label">AI Systems Architect</p>
+<h1 id="name">Annalisa Caria</h1>
+<p class="lead">I build clinical data systems and multi-agent workflows with evidence you can trace and behaviour you can test.</p>
+</section>
+<section id="work" aria-labelledby="work-title">
+<div class="section-heading"><h2 id="work-title">Selected work</h2></div>
+<article class="project" aria-labelledby="neo">
+<header><p class="label">Clinical data integration</p><h3 id="neo">Neomage</h3><p>A multimodal clinical intelligence platform for hospitals. The postoperative workspace brings records, vitals, lab results and imaging into one encounter, so a care team can see what was available six hours after surgery.</p></header>
+<section class="product-demo" aria-label="Neomage workspace demo" id="neomage-workspace">
+<div class="appbar"><strong>Neomage</strong><span>Synthetic encounter</span></div>
+<nav class="neo-nav" aria-label="Patient workspace navigation">
+<button type="button" data-filter="all"><span aria-hidden="true">▦</span>Dashboard</button>
+<button type="button" data-filter="vitals"><span aria-hidden="true">♥</span>Vital signs</button>
+<button type="button" data-filter="patient"><span aria-hidden="true">♙</span>Patient view</button>
+<button type="button" data-filter="labs"><span aria-hidden="true">⚗</span>Labs</button>
+<button type="button" data-filter="imaging"><span aria-hidden="true">▣</span>Imaging</button>
+<button type="button" data-filter="sources"><span aria-hidden="true">≡</span>Sources</button>
+</nav>
+<div class="appbody neo-main">
+<header class="patient-context">
+<div class="neo-identity"><span class="neo-avatar" aria-hidden="true">AM</span><div><p class="label" id="neo-view-label">Clinician workspace</p><h4>Alex Morgan</h4><p>Demo encounter 001 · Postoperative review</p></div></div>
+<div><label for="cutoff">Review time after surgery</label><select id="cutoff"><option value="6">6 hours</option><option value="8">8 hours</option></select></div>
+</header>
+<section id="neo-overview" aria-label="Multimodal overview">
+<div id="neo-status" class="neo-tiles" aria-label="Evidence at the selected time"></div>
+<div class="modality-grid">
+<section class="modality-card"><h5>♥ Vital signs</h5><div id="overview-vitals"></div><button type="button" data-open="vitals">Inspect vital signs</button></section>
+<section class="modality-card"><h5>⚗ Lab results</h5><div id="overview-labs"></div><button type="button" data-open="labs">Inspect labs</button></section>
+<section class="modality-card"><h5>▣ Imaging</h5><div id="overview-imaging"></div><button type="button" data-open="imaging">Open imaging viewer</button></section>
+</div>
+<section class="modality-card"><h5>Encounter timeline</h5><ol id="overview-timeline"></ol></section>
+</section>
+<section id="neo-patient" hidden aria-label="Patient view">
+<h5>Your hospital record</h5>
+<div id="neo-patient-tiles" class="neo-tiles"></div>
+<h5>Reports and results</h5>
+<div class="neo-shortcuts">
+<button type="button" data-open="vitals">♥ &nbsp; Vital signs →</button>
+<button type="button" data-open="labs">⚗ &nbsp; Lab results →</button>
+<button type="button" data-open="imaging">▣ &nbsp; Imaging record →</button>
+<button type="button" data-open="sources">≡ &nbsp; Where results came from →</button>
+</div>
+</section>
+<section id="neo-sources" class="modality-card" hidden aria-label="Evidence sources">
+<h5>Where every value came from</h5>
+<div id="neo-source-list"></div>
+</section>
+<section class="encounter" id="neo-detail" hidden aria-label="Modality details">
+<div><h5>Encounter evidence</h5><div id="evidence-list"></div></div>
+<div class="result"><h5 id="source-title">Source record</h5><div id="modality-visual"></div><dl id="source-record"></dl></div>
+</section>
+<div class="review-footer" id="neo-review-footer"><button id="save-review" type="button">Save review snapshot</button><div id="review-log" aria-live="polite"></div></div>
+</div>
+</section>
+<details class="technical"><summary>Architecture, engineering evidence and product direction</summary>
+<p><strong>The asset.</strong> A FastAPI evidence layer that ingests FHIR R4 and mapped CSV, renders DICOM or JPEG pixels, and ties events to one encounter. It distinguishes when a measurement was recorded from when the result became available. Clinicians can inspect the original source and flag missing or uncertain information.</p>
+<div class="proof"><strong>120 labs · 127 vitals · 1 linked chest X-ray</strong><span>Reported in a restricted-local acceptance run. The runnable synthetic six-hour review separately demonstrates saved reviews and auditable corrections.</span></div>
+<p><strong>The product I’m building.</strong> One workspace for hospital teams to reconstruct a patient’s course, investigate changes across modalities, and document review decisions with a traceable record. The next milestone is a real-data evidence-only replay. Validating a multimodal risk model is a separate research milestone.</p>
+<a class="text-link" href="https://github.com/alcadoni/neomage-clinical-ai">Read the architecture on GitHub</a></details>
+</article>
+<article class="project" aria-labelledby="pitch">
+<header><p class="label">Multi-agent orchestration &amp; evaluation</p><h3 id="pitch">Pitch Agent</h3><p>Develop and challenge a fundraising case before turning it into a deck.</p></header>
+<section class="product-demo" aria-label="Pitch Agent demo">
+<div class="appbar"><strong>Pitch Agent</strong><span>Interactive prototype · Fictional startup</span></div>
+<div class="appbody">
+<div class="workspace" role="group" aria-label="Pitch workspace">
+<button type="button" data-view="brief">Founder brief</button><button type="button" data-view="report" disabled>See report</button><button type="button" data-view="deck" disabled>See pitch deck</button>
+</div>
+<form id="pitch-form">
+<h4>Build your fundraising brief</h4>
+<label for="problem">What problem are you solving?</label><textarea id="problem" name="problem" rows="2" required maxlength="220">Freight depots juggle inbound bookings across calls, emails and spreadsheets.</textarea>
+<label for="customer">Who is it for?</label><textarea id="customer" name="customer" rows="2" required maxlength="220">Freight depot operators and inbound scheduling teams.</textarea>
+<label for="solution">How does your product help?</label><textarea id="solution" name="solution" rows="2" required maxlength="220">RailForge gives teams a shared booking queue with live arrival updates.</textarea>
+<button type="submit">Generate report and deck</button>
+</form>
+<div id="pitch-report" hidden class="result"><h4>Founder report</h4><dl id="report-data"></dl><h5>Investor question</h5><p>What has a customer actually paid, and what evidence shows they would renew?</p><button type="button" data-view="deck">See pitch deck</button></div>
+<div id="pitch-deck" hidden><div class="slide-stage"><p id="slide-count"></p><h4 id="slide-heading"></h4><p id="slide-text"></p><ol id="slide-visual" class="slide-visual"></ol></div><div class="workspace"><button id="slide-prev" type="button">Previous slide</button><button id="slide-next" type="button">Next slide</button></div></div>
+<p id="pitch-status" role="status"></p>
+</div></section>
+<details class="technical"><summary>Technical details</summary><p>I built a Python and FastAPI workflow that routes the founder brief through strategy, narrative and evaluation. Clarification answers and their sources persist through re-analysis. Private run records support replay and artifact verification.</p>
+<div class="proof"><strong>117 targeted regression tests passed</strong><span>Reported in the acceptance checkpoint, alongside a browser-tested synthetic deck export. Final product acceptance and live-model strategy evaluation remain open.</span></div>
+<a class="text-link" href="https://github.com/alcadoni/pitch-agent-public">Read the architecture on GitHub</a></details>
+</article>
+<article class="project" aria-labelledby="gnss">
+<header><p class="label">Scientific computing · GNSS</p><h3 id="gnss">Emergent Time</h3><p>Satellite clock analysis. Explore how orbit and clock measurements can be aligned to test an open hypothesis about timing.</p></header>
+<section class="product-demo orbit-demo" aria-label="Interactive satellite clock analysis">
+<div class="appbar"><strong>Satellite clock explorer</strong><span>Synthetic demonstration</span></div>
+<div class="appbody orbit-grid">
+<figure class="satellite"><img src="assets/gnss-satellite.webp" alt="Navigation satellite above Earth" loading="lazy"></figure>
+<div class="orbit-console">
+<div class="workspace" role="group" aria-label="Analysis stage">
+<button type="button" data-orbit="clock">Clock</button><button type="button" data-orbit="orbit">Orbit</button><button type="button" data-orbit="compare">Compare</button>
+</div>
+<h4 id="orbit-heading"></h4><p id="orbit-copy"></p>
+<figure class="orbit-chart"><figcaption id="orbit-caption"></figcaption><ol id="orbit-bars"></ol></figure>
+<label for="orbit-epoch">Inspect a matched epoch</label>
+<input type="range" id="orbit-epoch" min="0" max="3" value="0" step="1">
+<output id="orbit_readout" for="orbit-epoch"></output>
+</div></div></section>
+<details class="technical"><summary>Pipeline and open hypothesis</summary><p>I built a Python pipeline to parse International GNSS Service clock and orbit records, align them by satellite and timestamp and estimate changes in clock rate.</p>
+<div class="proof"><strong>Does orbital distance help explain residual clock-rate variation?</strong><span>The comparison would need to account for standard relativistic corrections and clock drift. The interactive chart uses illustrative values and the hypothesis remains open.</span></div></details>
+</article>
+</section>
+</main>
+<footer class="wrap footer" id="contact"><section class="contact-panel" aria-labelledby="contact-title"><div class="contact-intro"><span class="ac-mark" aria-hidden="true">A</span><section><h2 id="contact-title">Contact</h2><p>For AI architecture and technical product roles.</p></section></div><div class="contact-links"><a href="mailto:annalisacaria21@gmail.com">Email</a><a href="https://www.linkedin.com/in/annalisa-caria-29b9b7289/">LinkedIn</a><a href="https://github.com/alcadoni">GitHub</a></div></section></footer>
+<script src="site.js"></script>
+</body>
+</html>
