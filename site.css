@@ -214,3 +214,26 @@ body{background:linear-gradient(150deg,#f2eaf9,#faf8fc 48%,#edf4fa)}
 .contact-links a:hover{background:#f5edfb}
 @media(max-width:660px){#neomage-workspace .neo-nav{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:360px){#neomage-workspace .neo-nav button span{display:none}}
+
+/* Compact, two-column project layouts on phones held sideways. */
+@media (orientation: landscape) and (min-width: 560px) and (max-height: 520px) {
+  .wrap { width: calc(100% - 2rem); }
+  .nav { min-height: 3.25rem; }
+  .hero { padding: 1.25rem 1.5rem; }
+  .hero h1 { font-size: clamp(2.35rem, 6vw, 3.5rem); }
+  .hero .lead { margin-block: .55rem 0; font-size: 1.05rem; }
+  #work { padding-top: 1rem; }
+  .project { padding: 1rem; }
+  .appbody { padding: .75rem; }
+  #neomage-workspace .neo-nav { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  #neomage-workspace .neo-nav button span { display: none; }
+  .modality-grid, .encounter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modality-grid > section:last-child { grid-column: 1 / -1; }
+  .modality-grid .radiograph img { max-height: 11rem; object-fit: contain; }
+  .orbit-grid { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+  .orbit-grid .satellite img { max-height: 15rem; object-fit: contain; }
+  #pitch-form { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: .5rem 1rem; align-items: start; }
+  #pitch-form h4 { grid-column: 1 / -1; }
+  #pitch-form button { grid-column: 2; justify-self: start; margin-top: .25rem; }
+}
+
